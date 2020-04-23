@@ -1,0 +1,45 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="desenvolvedor5 (generated)" id="1587656647045-1">
+        <addColumn tableName="comentario">
+            <column name="uuid_ordemServico" type="BINARY(16)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="desenvolvedor5 (generated)" id="1587656647045-2">
+        <addForeignKeyConstraint baseColumnNames="uuid_ordemServico" baseTableName="comentario" constraintName="FKnnv4nfpric0ncivan80u10l6l" deferrable="false" initiallyDeferred="false" referencedColumnNames="uuid" referencedTableName="ordem_servico"/>
+    </changeSet>
+    <changeSet author="desenvolvedor5 (generated)" id="1587656647045-3">
+        <dropForeignKeyConstraint baseTableName="comentario" constraintName="FKrfvvdcs83wt1yq4unisfglky7"/>
+    </changeSet>
+    <changeSet author="desenvolvedor5 (generated)" id="1587656647045-4">
+        <dropColumn columnName="uuid_ordem_servico" tableName="comentario"/>
+    </changeSet>
+    <changeSet author="desenvolvedor5 (generated)" id="1587656647045-5">
+        <dropNotNullConstraint columnDataType="timestamp" columnName="created_at" tableName="comentario"/>
+    </changeSet>
+    <changeSet author="desenvolvedor5 (generated)" id="1587656647045-6">
+        <dropNotNullConstraint columnDataType="timestamp" columnName="created_at" tableName="ordem_servico"/>
+    </changeSet>
+    <changeSet author="desenvolvedor5 (generated)" id="1587656647045-7">
+        <dropNotNullConstraint columnDataType="timestamp" columnName="data_abertura" tableName="ordem_servico"/>
+        <dropDefaultValue columnDataType="timestamp" columnName="data_abertura" tableName="ordem_servico"/>
+    </changeSet>
+    <changeSet author="desenvolvedor5 (generated)" id="1587656647045-8">
+        <dropNotNullConstraint columnDataType="timestamp" columnName="data_envio" tableName="comentario"/>
+        <dropDefaultValue columnDataType="timestamp" columnName="data_envio" tableName="comentario"/>
+    </changeSet>
+    <changeSet author="desenvolvedor5 (generated)" id="1587656647045-9">
+        <dropNotNullConstraint columnDataType="timestamp" columnName="data_finalizacao" tableName="ordem_servico"/>
+        <dropDefaultValue columnDataType="timestamp" columnName="data_finalizacao" tableName="ordem_servico"/>
+    </changeSet>
+    <changeSet author="desenvolvedor5 (generated)" id="1587656647045-10">
+        <dropNotNullConstraint columnDataType="timestamp" columnName="updated_at" tableName="comentario"/>
+        <dropDefaultValue columnDataType="timestamp" columnName="updated_at" tableName="comentario"/>
+    </changeSet>
+    <changeSet author="desenvolvedor5 (generated)" id="1587656647045-11">
+        <dropNotNullConstraint columnDataType="timestamp" columnName="updated_at" tableName="ordem_servico"/>
+        <dropDefaultValue columnDataType="timestamp" columnName="updated_at" tableName="ordem_servico"/>
+    </changeSet>
+</databaseChangeLog>
